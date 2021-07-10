@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>8. Angular Reactive Forms</title>
+	<meta name="generator" content="Zim 0.73.5">
+	<meta name="viewport" content="width=device-width">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
+	<![if !IE]>
+	<!-- comment out for IE since it spams the user with warnings -->
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+	<script type='text/javascript'>
+		$(window).load(function(){$("#navigation").height( $("#content").height()+65 );});
+	</script>
+	<![endif]>
+	<style>
+		*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+		}
+		body, html {
+			height:100%;
+			font-family:'Open Sans', sans-serif;
+			line-height:1.5;
+			font-weight:300;
+			background-color:#FAFAFA;
+			text-rendering:geometricPrecision;
+			margin:0;
+			padding:0;
+		}
+		.wrapper {
+			height:100%;
+			padding: 1.25em;
+			margin: .5em;
+		}
+		#navigation {
+			background-color: #F3F3F3;
+			border-right:1px solid #EAEAEA;
+			padding: 1.25em;
+		}
+		
+
+		#content {
+			padding: 1.25em;
+			margin-bottom: .5em;
+			
+		}
+		#navigation ul {
+			margin-top:0;
+			margin-bottom:0;
+			padding-left:40px;
+		}
+		#navigation li {
+			list-style-type:none;
+		}
+		#navigation a {
+			text-decoration:none;
+			color:gray;
+		}
+		#navigation strong {
+			color: #6E1308;
+			font-weight:400;
+		}
+		#navigation a:hover {
+			text-decoration:underline;
+		}
+		#content h1:nth-child(1) {
+			margin-top:0;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color: #6E6408;
+			font-weight:300;
+		}
+		
+			
+		#content a {
+			color :#6E1308;
+		}
+		#content a {
+			text-decoration: none;
+		}
+		#content a:hover {
+			text-decoration: underline;
+		}
+		#content a:active {
+			text-decoration: underline;
+		}
+		#content strike {
+			color: grey;
+		}
+		#content u {
+			text-decoration: none;
+			background-color: yellow;
+		}
+		#content tt {
+			color: #6E1308;
+		}
+		#content pre {
+			color: #6E1308;
+			margin-left: 20px;
+		}
+		.backlinks {
+			color:gray;
+		}
+		hr.footnotes {
+			width: 20%;
+			margin-left: 0;
+		}
+
+	@media (min-width: 47.5em ) and (orientation: landscape) {
+	#content { margin-right: 19.5em; }
+
+	#navigation { position: absolute; top: 0; right: 0; width: 18.75em;}   
+	}
+		
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation"> <ul>
+<li><a href="../000_Home.html" title="000 Home" class="page">000 Home</a></li>
+<li><a href="../Angular.html" title="Angular" class="page">Angular</a>
+<ul>
+<li><a href="./1._What_Is_Angular.html" title="1. What Is Angular" class="page">1. What Is Angular</a></li>
+<li><a href="./2._TypeScript_Intro.html" title="2. TypeScript Intro" class="page">2. TypeScript Intro</a></li>
+<li><a href="./3._Prerequisites_and_Dev_Environment_Setup.html" title="3. Prerequisites and Dev Environment Setup" class="page">3. Prerequisites and Dev Environment Setup</a></li>
+<li><a href="./4._Angular_Components.html" title="4. Angular Components" class="page">4. Angular Components</a></li>
+<li><a href="./5._Angular_Templates.html" title="5. Angular Templates" class="page">5. Angular Templates</a></li>
+<li><a href="./6._Angular_Directives.html" title="6. Angular Directives" class="page">6. Angular Directives</a></li>
+<li><a href="./7._Material_Design_and_Angular_Material.html" title="7. Material Design and Angular Material" class="page">7. Material Design and Angular Material</a></li>
+<li><b>8. Angular Reactive Forms</b></li>
+<li><a href="./9._Angular_Services_and_Dependency_Injection.html" title="9. Angular Services and Dependency Injection" class="page">9. Angular Services and Dependency Injection</a></li>
+<li><a href="./10._Angular_Routing.html" title="10. Angular Routing" class="page">10. Angular Routing</a></li>
+<li><a href="./11._Angular_Observables_and_Consuming_REST(HTTP)_APIs.html" title="11. Angular Observables and Consuming REST(HTTP) APIs" class="page">11. Angular Observables and Consuming REST(HTTP) APIs</a></li>
+</ul>
+</li>
+<li><a href="../Recommended_Reading,_Watching.html" title="Recommended Reading, Watching" class="page">Recommended Reading, Watching</a></li>
+</ul>
+ </div>
+		<div id="content">
+			<h1>8. Angular Reactive Forms <a name='Angular:8. Angular Reactive Forms'></a></h1>
+
+			<p>
+Created Saturday 10 July 2021
+</p>
+
+<p>
+When we use ngModel with an input field, we are already using an Angular form! These are called Angular template-driven forms and are the most basic way of dealing with form data on Angular.
+</p>
+
+<p>
+However, template-driven forms don't scale well and don't utilize the full power of Angular, instead falling back on the HTML + JS approach to things. 
+</p>
+
+<p>
+In Angular, we can use the more robust <b>Angular Reactive Forms</b> feature.
+</p>
+
+<p>
+Advantages:
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>Single configuration point for entire form</li>
+<li>Much better and more versatile validation options</li>
+<li>Access to useful features like checking if entire form (all fields) is valid</li>
+</ol>
+</p>
+
+<p>
+Before we start:
+</p>
+
+<p>
+Add the <b>ReactiveFormsModule</b> to your imports array in app.module.ts
+</p>
+
+<p>
+Check that it has also been automatically imported at the top of this file or it will throw error.
+</p>
+
+<p>
+In your component TS file, import this:
+</p>
+<div class="zim-object">
+<pre><code class="js">import { FormGroup } from '@angular/forms';
+</code></pre>
+</div>
+
+<br>
+
+<p>
+Let us now create a form using Reactive Forms. The crux of this is that 
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>The form is first defined as a FormGroup object in TypeScript, then actually created and bound to it in the template.</li>
+<li>Each field is given a FormControl, that has an initial value and some validations attached to it.</li>
+</ol>
+</p>
+<div class="zim-object">
+<pre><code class="js">export class FormComponent implements OnInit {
+
+  loginForm: FormGroup;
+.
+.
+.
+constructor() {
+    this.loginForm = new FormGroup({
+      'email' : new FormControl(null, [Validators.required, Validators.email]),      
+      'password' : new FormControl(null, Validators.required)
+    });
+  }
+</code></pre>
+</div>
+
+<br>
+
+<p>
+We create a basic form using Angular Material:
+</p>
+
+<div class="zim-object">
+<pre><code class="html">&lt;section class='container'&gt;
+    &lt;div class='regForm'&gt;
+        &lt;h3&gt;Login&lt;/h3&gt;
+        &lt;form class="registration-form"&gt;
+            &lt;mat-form-field appearance="fill"&gt;
+                &lt;mat-label&gt;Username&lt;/mat-label&gt;
+                &lt;input matInput placeholder="Ex. ronray"&gt;
+            &lt;/mat-form-field&gt;
+            &lt;br&gt;
+            &lt;mat-form-field appearance="fill"&gt;
+                &lt;mat-label&gt;Password&lt;/mat-label&gt;
+                &lt;input matInput&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/form&gt;
+        &lt;div class='action'&gt;
+            &lt;button mat-raised-button color="primary"&gt;Register&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+</div>
+
+<br>
+
+<div class="zim-object">
+<pre><code class="css">section,
+.action {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+</code></pre>
+</div>
+
+<br>
+
+<p>
+Now we add the bits to the template to make it reactive.
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>The form is given the formGroup as a property binding</li>
+<li>Every individual form field is given a form control name as a property binding or as a simple string (both are valid)</li>
+</ol>
+</p>
+
+<div class="zim-object">
+<pre><code class="html">&lt;section class='container'&gt;
+    &lt;div class='regForm'&gt;
+        &lt;h3&gt;User Registration&lt;/h3&gt;
+        &lt;form class="registration-form" [formGroup]="loginForm"&gt;
+            &lt;mat-form-field appearance="fill"&gt;
+                &lt;mat-label&gt;Username&lt;/mat-label&gt;
+                &lt;input matInput placeholder="Ex. ronray" formControlName='username'&gt;
+            &lt;/mat-form-field&gt;
+            &lt;br&gt;
+            &lt;mat-form-field appearance="fill"&gt;
+                &lt;mat-label&gt;Password&lt;/mat-label&gt;
+                &lt;input matInput formControlName='password'&gt;
+            &lt;/mat-form-field&gt;
+        &lt;/form&gt;
+        &lt;div class='action'&gt;
+            &lt;button mat-raised-button color="primary" [disabled]='!loginForm.valid' (click)="onSubmit()"&gt;Register&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;div class='data' *ngIf="areDetailsShown"&gt;
+            &lt;h4&gt;Submitted Data&lt;/h4&gt;
+            &lt;p&gt;Username: {{ loginForm.value.username }}&lt;/p&gt;
+            &lt;p&gt;Password: {{ loginForm.value.password  }}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+</div>
+
+<br>
+
+<div class="zim-object">
+<pre><code class="js">import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.css']
+})
+export class FormComponent implements OnInit {
+
+  loginForm: FormGroup;
+  areDetailsShown: boolean;
+
+  constructor() {
+    this.loginForm = new FormGroup({
+      'email' : new FormControl(null, [Validators.required, Validators.email]),      
+      'password' : new FormControl(null, Validators.required)
+    });
+    this.areDetailsShown = false;
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  onSubmit() : void {
+    this.areDetailsShown = true;
+    console.log(this.loginForm.value);
+  }
+}
+</code></pre>
+</div>
+
+<br>
+
+<p>
+The extra logic to show details on submission is just added to show that our form is working and we can retrieve data from it.
+</p>
+
+
+			<br>
+			<span class="backlinks">
+				<hr class='footnotes'>
+				<b>Backlinks:</b>
+				<a href='../Angular.html'>Angular</a>
+				<br /><br />
+			</span>
+
+			
+		</div>
+	</div>
+</body>
+</html>
+

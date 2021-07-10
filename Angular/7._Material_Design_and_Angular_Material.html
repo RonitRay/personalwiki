@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>2. TypeScript Intro</title>
+	<title>7. Material Design and Angular Material</title>
 	<meta name="generator" content="Zim 0.73.5">
 	<meta name="viewport" content="width=device-width">
 	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
@@ -124,12 +124,12 @@
 <li><a href="../Angular.html" title="Angular" class="page">Angular</a>
 <ul>
 <li><a href="./1._What_Is_Angular.html" title="1. What Is Angular" class="page">1. What Is Angular</a></li>
-<li><b>2. TypeScript Intro</b></li>
+<li><a href="./2._TypeScript_Intro.html" title="2. TypeScript Intro" class="page">2. TypeScript Intro</a></li>
 <li><a href="./3._Prerequisites_and_Dev_Environment_Setup.html" title="3. Prerequisites and Dev Environment Setup" class="page">3. Prerequisites and Dev Environment Setup</a></li>
 <li><a href="./4._Angular_Components.html" title="4. Angular Components" class="page">4. Angular Components</a></li>
 <li><a href="./5._Angular_Templates.html" title="5. Angular Templates" class="page">5. Angular Templates</a></li>
 <li><a href="./6._Angular_Directives.html" title="6. Angular Directives" class="page">6. Angular Directives</a></li>
-<li><a href="./7._Material_Design_and_Angular_Material.html" title="7. Material Design and Angular Material" class="page">7. Material Design and Angular Material</a></li>
+<li><b>7. Material Design and Angular Material</b></li>
 <li><a href="./8._Angular_Reactive_Forms.html" title="8. Angular Reactive Forms" class="page">8. Angular Reactive Forms</a></li>
 <li><a href="./9._Angular_Services_and_Dependency_Injection.html" title="9. Angular Services and Dependency Injection" class="page">9. Angular Services and Dependency Injection</a></li>
 <li><a href="./10._Angular_Routing.html" title="10. Angular Routing" class="page">10. Angular Routing</a></li>
@@ -140,168 +140,70 @@
 </ul>
  </div>
 		<div id="content">
-			<h1>2. TypeScript Intro <a name='Angular:2. TypeScript Intro'></a></h1>
+			<h1>7. Material Design and Angular Material <a name='Angular:7. Material Design and Angular Material'></a></h1>
 
 			<p>
 Created Saturday 10 July 2021
 </p>
 
 <p>
-TypeScript is an extension of JavaScript.
+Material Design is a design language developed by Google in 2014. Expanding on the "cards" that debuted in Google Now, Material Design uses more grid-based layouts, responsive animations and transitions, padding, and depth effects such as lighting and shadows.
 </p>
 
 <p>
-[Typed JavaScript at Any Scale.](<a href="https://www.typescriptlang.org/" title="https://www.typescriptlang.org/" class="https">https://www.typescriptlang.org/</a>)
+Material design is a set of aesthetic and functional guidelines that developers can follow to make their apps beautiful and consistent.
 </p>
 
 <p>
-<ol type="1" start="1">
-<li>It allows more robust development at scale</li>
-<li>It can be considered a "superset" meaning it has all the features of JS, but adds some killer features to it.
-<ol type="a" start="1">
-<li>Static Typing</li>
-<li>Strict Checks</li>
-</ol></li>
-</ol>
-</p>
-
-<div class="zim-object">
-<pre><code class="js">function add(a,b) {
-	var c= a + b
-	return c;
-}
-
-console.log(add(1,2));
-console.log(add(1,'2'));
-</code></pre>
-</div>
-
-<br>
-
-<p>
-JS is not untyped, it is <b>dynamically typed:</b> no types expected, but type is determined at runtime. 
+[Material Design](<a href="https://material.io/design" title="https://material.io/design" class="https">https://material.io/design</a>)
 </p>
 
 <p>
-Issues:
+[Material Design](<a href="https://material.io/components" title="https://material.io/components" class="https">https://material.io/components</a>)
 </p>
 
 <p>
-- Will accept and try to compute any input<br>
-<div style='padding-left: 30pt'>
-- If unexpected or edge cases are not handled properly, there is scope for serious breakage
-</div>
-- JS code is easy to write, but not easy for another person to understand.
-</p>
-
-<div class="zim-object">
-<pre><code class="js">function addTwoNumbers (num1: number, num2: number) : number {
-    let sum : number = num1 + num2;
-    return sum;
-}
-
-console.log(addTwoNumbers(1,2));
-console.log(addTwoNumbers(1,'2'));
-
-let arrayOfStrings : string[];
-
-arrayOfStrings : ['a','b','c'];
-
-let employee : {
-	name: string;
-	employeeId: number;
-};
-
-employee = {
-	name: 'Ron',
-	employeeId: '123'
-}
-
-</code></pre>
-</div>
-
-<br>
-
-<p>
-<b>Generics and Other Power Features</b>
-</p>
-<div class="zim-object">
-<pre><code class="js">function insertAtBeginning(array: string[], value:string) {
-	const newArray = [value, ... array];
-	return newArray;
-}
-
-const demoArray = [1,2,3];
-const updatedArray = insertAtBeginning(demoArray, -1);
-
-updatedArray[0].split(' ');
-</code></pre>
-</div>
-
-<br>
-
-<p>
-The above is valid TypeScript, we define a func to add an element to beginning of an array, no matter what the type of array is.
+However, translating design (UI/UX) guidelines to actual code is very difficult for frontend developers. 
 </p>
 
 <p>
-However, if we then want to do type-specific operations with the array elements, we lose out on TS checking due to the explicit <b>any</b> assignment. 
+This is why the team at Google has provided Angular Material- a library of reusable modules and components that can be integrated swiftly with your Angular project to give it material design-inspired look throughout.
 </p>
 
 <p>
-Even if our array has numbers, the line where we call split (valid only on Strings) is not flagged by TSC because at compile time TSC does not know what the type of the element will be. We get a runtime error instead, which is exactly what TS is expected to avoid.
+[Angular Material](<a href="https://material.angular.io/" title="https://material.angular.io/" class="https">https://material.angular.io/</a>)
 </p>
 
 <p>
-To deal with this, we have the concept of generics.
-</p>
-
-<div class="zim-object">
-<pre><code class="js">function insertAtBeginning&lt;T&gt;(array: T[], value:T) {
-	const newArray = [value, ... array];
-	return newArray;
-}
-
-const demoArray = [1,2,3];
-const addedElement = -1;
-const updatedArray = insertAtBeginning(demoArray, addedElement);
-
-updatedArray[0].split('');
-</code></pre>
-</div>
-
-<br>
-
-<p>
-There are other features TS uses that are in line with languages like Java like:
+Get started quickly:
 </p>
 
 <p>
-<ol type="1" start="1">
-<li>Proper classes with typed attributes, constructors etc.</li>
-<li>Interfaces to define custom types that can then be implemented by classes to enforce a consistent structure.</li>
-<li>Access and scope control (private etc.)</li>
-</ol>
+[Angular Material](<a href="https://material.angular.io/guide/getting-started" title="https://material.angular.io/guide/getting-started" class="https">https://material.angular.io/guide/getting-started</a>)
 </p>
 
 <p>
-Browsers do not run TypeScript by default. As a result, we need to change all our TS code to JS before running it. TS provides a "transpilation" mechanism using the TypeScript compiler <b>tsc</b> to do this.
+Check out the various components available:
 </p>
 
 <p>
-The TypeScript compiler will always flag issues at compile-time, but to make the development process even more convenient, we can use a code editor that compiles everything as you type, flagging any errors the moment they come up.
+[Angular Material](<a href="https://material.angular.io/components/categories" title="https://material.angular.io/components/categories" class="https">https://material.angular.io/components/categories</a>)
 </p>
 
 <p>
-<b>NOTE:</b> The strict checks that TS enforces are not part of the JavaScript output. This is why you write in safe TS to ensure any mistakes are handled well before the output JS is generated.
+You can also use Schematics or pre-built layouts to get started very quickly.
 </p>
 
 <p>
-<b>Recommendation: Visual Studio Code</b>
+[Angular Material](<a href="https://material.angular.io/guide/schematics" title="https://material.angular.io/guide/schematics" class="https">https://material.angular.io/guide/schematics</a>)
 </p>
 
 <p>
-[Visual Studio Code - Code Editing. Redefined](<a href="https://code.visualstudio.com/" title="https://code.visualstudio.com/" class="https">https://code.visualstudio.com/</a>)
+Follow the tutorial from Codevolution on YouTube for any issues:
+</p>
+
+<p>
+[Angular Material Tutorial](<a href="https://www.youtube.com/playlist?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU" title="https://www.youtube.com/playlist?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU" class="https">https://www.youtube.com/playlist?list=PLC3y8-rFHvwilEuCqFGTL5Gt5U6deIrsU</a>)
 </p>
 
 
