@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>4. Angular Components</title>
+	<meta name="generator" content="Zim 0.73.5">
+	<meta name="viewport" content="width=device-width">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
+	<![if !IE]>
+	<!-- comment out for IE since it spams the user with warnings -->
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+	<script type='text/javascript'>
+		$(window).load(function(){$("#navigation").height( $("#content").height()+65 );});
+	</script>
+	<![endif]>
+	<style>
+		*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+		}
+		body, html {
+			height:100%;
+			font-family:'Open Sans', sans-serif;
+			line-height:1.5em;
+			font-weight:300;
+			background-color:#FAFAFA;
+			text-rendering:geometricPrecision;
+			margin:0;
+			padding:0;
+		}
+		.wrapper {
+			height:100%;
+			padding: 1.25em;
+			margin: .5em;
+		}
+		#navigation {
+			background-color: #F3F3F3;
+			border-right:1px solid #EAEAEA;
+			padding: 1.25em;
+		}
+		
+
+		#content {
+			padding: 1.25em;
+			margin-bottom: .5em;
+			
+		}
+		#navigation ul {
+			margin-top:0;
+			margin-bottom:0;
+			padding-left:40px;
+		}
+		#navigation li {
+			list-style-type:none;
+		}
+		#navigation a {
+			text-decoration:none;
+			color:gray;
+		}
+		#navigation strong {
+			color: #6E1308;
+			font-weight:400;
+		}
+		#navigation a:hover {
+			text-decoration:underline;
+		}
+		#content h1:nth-child(1) {
+			margin-top:0;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color: #6E6408;
+			font-weight:300;
+		}
+		
+			
+		#content a {
+			color :#6E1308;
+		}
+		#content a {
+			text-decoration: none;
+		}
+		#content a:hover {
+			text-decoration: underline;
+		}
+		#content a:active {
+			text-decoration: underline;
+		}
+		#content strike {
+			color: grey;
+		}
+		#content u {
+			text-decoration: none;
+			background-color: yellow;
+		}
+		#content tt {
+			color: #6E1308;
+		}
+		#content pre {
+			color: #6E1308;
+			margin-left: 20px;
+		}
+		.backlinks {
+			color:gray;
+		}
+		hr.footnotes {
+			width: 20%;
+			margin-left: 0;
+		}
+
+	@media (min-width: 47.5em ) and (orientation: landscape) {
+	#content { margin-right: 19.5em; }
+
+	#navigation { position: absolute; top: 0; right: 0; width: 18.75em;}   
+	}
+		
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation"> <ul>
+<li><a href="../Angular.html" title="Angular" class="page">Angular</a>
+<ul>
+<li><a href="./1._What_Is_Angular.html" title="1. What Is Angular" class="page">1. What Is Angular</a></li>
+<li><a href="./2._TypeScript_Intro.html" title="2. TypeScript Intro" class="page">2. TypeScript Intro</a></li>
+<li><a href="./3._Prerequisites_and_Dev_Environment_Setup.html" title="3. Prerequisites and Dev Environment Setup" class="page">3. Prerequisites and Dev Environment Setup</a></li>
+<li><b>4. Angular Components</b></li>
+<li><a href="./5._Angular_Templates.html" title="5. Angular Templates" class="page">5. Angular Templates</a></li>
+<li><a href="./6._Angular_Directives.html" title="6. Angular Directives" class="page">6. Angular Directives</a></li>
+<li><a href="./Angular_Observables_and_Consuming_REST(HTTP)_APIs.html" title="Angular Observables and Consuming REST(HTTP) APIs" class="page">Angular Observables and Consuming REST(HTTP) APIs</a></li>
+<li><a href="./Angular_Reactive_Forms.html" title="Angular Reactive Forms" class="page">Angular Reactive Forms</a></li>
+<li><a href="./Angular_Routing.html" title="Angular Routing" class="page">Angular Routing</a></li>
+<li><a href="./Angular_Services_and_Dependency_Injection.html" title="Angular Services and Dependency Injection" class="page">Angular Services and Dependency Injection</a></li>
+<li><a href="./Material_Design_and_Angular_Material.html" title="Material Design and Angular Material" class="page">Material Design and Angular Material</a></li>
+</ul></li>
+</ul>
+ </div>
+		<div id="content">
+			<h1>4. Angular Components <a name='Angular:4. Angular Components'></a></h1>
+
+			<p>
+Created Saturday 10 July 2021
+</p>
+
+<p>
+Angular is highly modular and encourages you to think of your app as a loosely-linked collection of different independent components.
+</p>
+
+<p>
+In the design phase, you are expected to decompose your app into atomic components, and then define a logical flow that ties them together.
+</p>
+
+<p>
+The only page loaded by the angular application is index.html.
+</p>
+
+<p>
+Along with this, some JS is injected by default. This JS is what manipulates the content of the page based on logic you have defined already.
+</p>
+
+<div class="zim-object">
+<pre><code class="html">&lt;app-root&gt;&lt;/app-root&gt;
+</code></pre>
+</div>
+
+<br>
+
+<p>
+App root is a custom HTML tag, obviously. This refers to a very particular <b>component</b> in the project. At the time of creating a new project, only a single component is created called the AppComponent.
+</p>
+
+<p>
+Each Angular component has:
+</p>
+
+<p>
+- An HTML template that declares what renders on the page<br>
+- A Typescript class that defines behavior<br>
+- A CSS selector that defines how the component is used in a template<br>
+- Optionally, CSS styles applied to the template
+</p>
+
+<p>
+<b>What does ng serve do?</b>
+</p>
+
+<p>
+When ng serve is called, it:
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>Launches a live server on [localhost](http://localhost) to show changes automatically as they happen.</li>
+<li>Creates "script bundles" of JavaScript that are injected into your basic HTML file </li>
+<li>All execution starts at main.ts</li>
+</ol>
+</p>
+
+<p>
+<b>main.ts description:</b>
+</p>
+
+<div class="zim-object">
+<pre><code class="js">platformBrowserDynamic().bootstrapModule(AppModule)
+</code></pre>
+</div>
+
+<br>
+
+<p>
+bootstrapModule basically allows us to inject or instantiate something called AppModule within our application.
+</p>
+
+<p>
+AppModule refers to <b>app.module.ts</b>
+</p>
+
+<p>
+Here the bootstrap attribute will consist of all the elements that your application will be expected to know about when showing the index.html file.
+</p>
+
+<p>
+Top-Down execution:
+</p>
+
+<p>
+index.html
+</p>
+
+<p>
+main.ts &gt; bootstrapModule &gt; AppModule.bootstrap &gt; AppComponent &gt; find template, manipulate template, render output in index.
+</p>
+
+<p>
+The root component or AppComponent is the base of the entire application and will encapsulate any other components we make. 
+</p>
+
+<p>
+Only AppComponent is typically bootstrapped on application start and included in index.html. Everything else is added to app.component.html and lower level components.
+</p>
+
+<p>
+To create a new component, we type:
+</p>
+<div class="zim-object">
+<pre><code class="js">ng generate component &lt;component-name&gt;
+
+OR
+
+ng g c &lt;component-name&gt;
+</code></pre>
+</div>
+
+<p>
+And then we can refer to it in any other component using the defined selector.
+</p>
+
+
+			<br>
+			<span class="backlinks">
+				<hr class='footnotes'>
+				<b>Backlinks:</b>
+				<a href='../Angular.html'>Angular</a>
+				<br /><br />
+			</span>
+
+			
+		</div>
+	</div>
+</body>
+</html>
+

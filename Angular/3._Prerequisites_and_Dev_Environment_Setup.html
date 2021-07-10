@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>3. Prerequisites and Dev Environment Setup</title>
+	<meta name="generator" content="Zim 0.73.5">
+	<meta name="viewport" content="width=device-width">
+	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek,latin-ext' rel='stylesheet' type='text/css'> -->
+	<![if !IE]>
+	<!-- comment out for IE since it spams the user with warnings -->
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.7.1.js'></script>
+	<script type='text/javascript'>
+		$(window).load(function(){$("#navigation").height( $("#content").height()+65 );});
+	</script>
+	<![endif]>
+	<style>
+		*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+		}
+		body, html {
+			height:100%;
+			font-family:'Open Sans', sans-serif;
+			line-height:1.5em;
+			font-weight:300;
+			background-color:#FAFAFA;
+			text-rendering:geometricPrecision;
+			margin:0;
+			padding:0;
+		}
+		.wrapper {
+			height:100%;
+			padding: 1.25em;
+			margin: .5em;
+		}
+		#navigation {
+			background-color: #F3F3F3;
+			border-right:1px solid #EAEAEA;
+			padding: 1.25em;
+		}
+		
+
+		#content {
+			padding: 1.25em;
+			margin-bottom: .5em;
+			
+		}
+		#navigation ul {
+			margin-top:0;
+			margin-bottom:0;
+			padding-left:40px;
+		}
+		#navigation li {
+			list-style-type:none;
+		}
+		#navigation a {
+			text-decoration:none;
+			color:gray;
+		}
+		#navigation strong {
+			color: #6E1308;
+			font-weight:400;
+		}
+		#navigation a:hover {
+			text-decoration:underline;
+		}
+		#content h1:nth-child(1) {
+			margin-top:0;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color: #6E6408;
+			font-weight:300;
+		}
+		
+			
+		#content a {
+			color :#6E1308;
+		}
+		#content a {
+			text-decoration: none;
+		}
+		#content a:hover {
+			text-decoration: underline;
+		}
+		#content a:active {
+			text-decoration: underline;
+		}
+		#content strike {
+			color: grey;
+		}
+		#content u {
+			text-decoration: none;
+			background-color: yellow;
+		}
+		#content tt {
+			color: #6E1308;
+		}
+		#content pre {
+			color: #6E1308;
+			margin-left: 20px;
+		}
+		.backlinks {
+			color:gray;
+		}
+		hr.footnotes {
+			width: 20%;
+			margin-left: 0;
+		}
+
+	@media (min-width: 47.5em ) and (orientation: landscape) {
+	#content { margin-right: 19.5em; }
+
+	#navigation { position: absolute; top: 0; right: 0; width: 18.75em;}   
+	}
+		
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation"> <ul>
+<li><a href="../Angular.html" title="Angular" class="page">Angular</a>
+<ul>
+<li><a href="./1._What_Is_Angular.html" title="1. What Is Angular" class="page">1. What Is Angular</a></li>
+<li><a href="./2._TypeScript_Intro.html" title="2. TypeScript Intro" class="page">2. TypeScript Intro</a></li>
+<li><b>3. Prerequisites and Dev Environment Setup</b></li>
+<li><a href="./4._Angular_Components.html" title="4. Angular Components" class="page">4. Angular Components</a></li>
+<li><a href="./5._Angular_Templates.html" title="5. Angular Templates" class="page">5. Angular Templates</a></li>
+<li><a href="./6._Angular_Directives.html" title="6. Angular Directives" class="page">6. Angular Directives</a></li>
+<li><a href="./Angular_Observables_and_Consuming_REST(HTTP)_APIs.html" title="Angular Observables and Consuming REST(HTTP) APIs" class="page">Angular Observables and Consuming REST(HTTP) APIs</a></li>
+<li><a href="./Angular_Reactive_Forms.html" title="Angular Reactive Forms" class="page">Angular Reactive Forms</a></li>
+<li><a href="./Angular_Routing.html" title="Angular Routing" class="page">Angular Routing</a></li>
+<li><a href="./Angular_Services_and_Dependency_Injection.html" title="Angular Services and Dependency Injection" class="page">Angular Services and Dependency Injection</a></li>
+<li><a href="./Material_Design_and_Angular_Material.html" title="Material Design and Angular Material" class="page">Material Design and Angular Material</a></li>
+</ul></li>
+</ul>
+ </div>
+		<div id="content">
+			<h1>3. Prerequisites and Dev Environment Setup <a name='Angular:3. Prerequisites and Dev Environment Setup'></a></h1>
+
+			<p>
+Created Saturday 10 July 2021
+</p>
+
+<p>
+To work with Angular you need:
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>HTML</li>
+<li>CSS</li>
+<li>TypeScript</li>
+</ol>
+</p>
+
+<p>
+To run Angular, you need:
+</p>
+
+<p>
+<ol type="1" start="1">
+<li>Node.js </li>
+</ol>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+[Why Node?](<a href="https://www.notion.so/Why-Node-1c7baad56c0747f19a4e374690b4d8c4" title="https://www.notion.so/Why-Node-1c7baad56c0747f19a4e374690b4d8c4" class="https">https://www.notion.so/Why-Node-1c7baad56c0747f19a4e374690b4d8c4</a>)
+</div>
+</p>
+
+<p>
+<ol type="1" start="2">
+<li>NPM</li>
+</ol>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+[npm](<a href="https://www.npmjs.com/" title="https://www.npmjs.com/" class="https">https://www.npmjs.com/</a>)
+</div>
+</p>
+
+<p>
+<ol type="1" start="3">
+<li>Angular CLI</li>
+<li>A text editor (preferably VSCode)</li>
+<li>A browser (preferably Google Chrome)</li>
+</ol>
+</p>
+
+<p>
+NOW: <b>First Angular app! </b>
+</p>
+
+<div class="zim-object">
+<pre><code class="makefile">npm i -g @angular/cli
+ng new firstAngular
+cd firstAngular
+ng serve
+</code></pre>
+</div>
+
+
+
+			<br>
+			<span class="backlinks">
+				<hr class='footnotes'>
+				<b>Backlinks:</b>
+				<a href='../Angular.html'>Angular</a>
+				<br /><br />
+			</span>
+
+			
+		</div>
+	</div>
+</body>
+</html>
+
