@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Use i3 as XFCE's Window Manager | Ronit Ray's Wiki</title>
+	<title>Disable IPv6 | Ronit Ray's Wiki</title>
 	<meta name="generator" content="Zim 0.73.5">
 	<meta name="viewport" content="width=device-width">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,11 +127,11 @@
 <ul>
 <li><a href="./Arch_Install_Guide.html" title="Arch Install Guide" class="page">Arch Install Guide</a></li>
 <li><a href="./Compress_PDFs_Easily.html" title="Compress PDFs Easily" class="page">Compress PDFs Easily</a></li>
-<li><a href="./Disable_IPv6.html" title="Disable IPv6" class="page">Disable IPv6</a></li>
+<li><b>Disable IPv6</b></li>
 <li><a href="./Get_Headset_working_through_TRRS_combi-jack.html" title="Get Headset working through TRRS combi-jack" class="page">Get Headset working through TRRS combi-jack</a></li>
 <li><a href="./KDE_Setup_Guide.html" title="KDE Setup Guide" class="page">KDE Setup Guide</a></li>
 <li><a href="./Useful_Firefox_Tweaks.html" title="Useful Firefox Tweaks" class="page">Useful Firefox Tweaks</a></li>
-<li><b>Use i3 as XFCE's Window Manager</b></li>
+<li><a href="./Use_i3_as_XFCE's_Window_Manager.html" title="Use i3 as XFCE's Window Manager" class="page">Use i3 as XFCE's Window Manager</a></li>
 <li><a href="./Vim_Tips.html" title="Vim Tips" class="page">Vim Tips</a></li>
 </ul>
 </li>
@@ -141,33 +141,53 @@
 </ul>
  </div>
 		<div id="content">
-			<h1>Use i3 as XFCE's Window Manager <a name='Linux Stuff:Use i3 as XFCE's Window Manager'></a></h1>
+			<h1>Disable IPv6 <a name='Linux Stuff:Disable IPv6'></a></h1>
 
 			<p>
-Created Saturday 10 July 2021
+Created Wednesday 14 July 2021
+</p>
+
+<div class="zim-object">
+<pre><code class="js">sudo vi /etc/sysctl.conf
+</code></pre>
+</div>
+
+<br>
+
+<p>
+Add at the bottom:
+</p>
+
+<div class="zim-object">
+<pre><code class="js">net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+net.ipv6.conf.tun0.disable_ipv6 = 1
+</code></pre>
+</div>
+
+<br>
+
+<div class="zim-object">
+<pre><code class="js">sudo sysctl -p
+</code></pre>
+</div>
+
+<p>
+ to apply the changes
 </p>
 
 <p>
-From <a href="https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html" title="https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html" class="https">https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html</a>
+check status with:
 </p>
 
-<p>
-<ol type="1" start="1">
-<li>Session and Startup &gt; Session</li>
-<li>Note xfwm4 and xfdesktop. These processes will be replaced by the i3 Window Manager.</li>
-<li>For xfwm4, click 'Immediately' and change it to the  'Never' option.</li>
-<li>For xfdesktop, click 'Immediately' and change it to the 'Never' option.</li>
-<li>Save Session</li>
-</ol>
-</p>
+<div class="zim-object">
+<pre><code class="js">sudo cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+</code></pre>
+</div>
 
 <p>
-<ol type="1" start="1">
-<li>Session and Startup &gt; Application Autostart</li>
-<li>add entry for i3</li>
-<li>Keyboard &gt; Application Shortcuts</li>
-<li>Remove all.</li>
-</ol>
+ if 1, IPv6 disabled.
 </p>
 
 
