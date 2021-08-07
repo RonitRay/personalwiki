@@ -169,7 +169,8 @@ We have already used one directive in the last lesson, the ngModel directive all
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">&lt;div [ngClass]="currentClasses"&gt;
+<pre>
+&lt;div [ngClass]="currentClasses"&gt;
 Some content here
 &lt;/div&gt;
 
@@ -183,7 +184,7 @@ currentClasses: Record&lt;string, boolean&gt; = {};
       special:  this.isSpecial
     };
   }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -194,7 +195,8 @@ currentClasses: Record&lt;string, boolean&gt; = {};
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">&lt;div [ngStyle]="currentStyles"&gt;
+<pre>
+&lt;div [ngStyle]="currentStyles"&gt;
   Some content
 &lt;/div&gt;
 
@@ -208,7 +210,7 @@ currentStyles: Record&lt;string, string&gt; = {};
       'font-size':   this.isSpecial    ? '24px'   : '12px'
     };
   }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -220,10 +222,11 @@ currentStyles: Record&lt;string, string&gt; = {};
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">&lt;button *ngIf='isButtonShown' 
+<pre>
+&lt;button *ngIf='isButtonShown' 
 [disabled]='isButtonDisabled' 
 (click) = 'buttonClicked()'&gt;Click me!&lt;/button&gt;
-</code></pre>
+</pre>
 </div>
 
 <br>

@@ -177,8 +177,9 @@ Add an attribute inside component class and use it.
 Refer to it inside template using
 </p>
 <div class="zim-object">
-<pre><code class="js">{{ attr }}
-</code></pre>
+<pre>
+{{ attr }}
+</pre>
 </div>
 
 <br>
@@ -187,8 +188,9 @@ Refer to it inside template using
 We can optionally use pipes in template like 
 </p>
 <div class="zim-object">
-<pre><code class="js">{{ attr | uppercase }}
-</code></pre>
+<pre>
+{{ attr | uppercase }}
+</pre>
 </div>
 
 <br>
@@ -203,8 +205,9 @@ We can optionally use pipes in template like
 </p>
 
 <div class="zim-object">
-<pre><code class="js">&lt;button id = "newbutton"&gt;Click me!&lt;/button&gt;
-</code></pre>
+<pre>
+&lt;button id = "newbutton"&gt;Click me!&lt;/button&gt;
+</pre>
 </div>
 
 <p>
@@ -214,8 +217,9 @@ Just creates a basic HTML button. Now a button has certain properties. Let's che
 </p>
 
 <div class="zim-object">
-<pre><code class="js">&lt;button id = "newbutton" disabled&gt;Click me!&lt;/button&gt;
-</code></pre>
+<pre>
+&lt;button id = "newbutton" disabled&gt;Click me!&lt;/button&gt;
+</pre>
 </div>
 
 <br>
@@ -227,13 +231,14 @@ Now, dynamically:
 </p>
 
 <div class="zim-object">
-<pre><code class="js">In TS:
+<pre>
+In TS:
 isButtonDisabled : boolean = false;
 
 In template:
 &lt;button id = "newbutton" 
 [disabled]="isButtonDisabled"&gt;Click me!&lt;/button&gt;
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -250,7 +255,8 @@ We have just "bound" the value of a variable to a property of an element in the 
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">In TS:
+<pre>
+In TS:
 buttonClicked(){
     console.log("Button has been clicked.")
   }
@@ -258,7 +264,7 @@ buttonClicked(){
 In template:
 &lt;button [disabled]='isButtonDisabled' 
 (click) = 'buttonClicked()'&gt;Click me!&lt;/button&gt;
-</code></pre>
+</pre>
 </div>
 
 <p>
@@ -267,7 +273,8 @@ This allows you to bind the event of a click with an action in the TS.
 </div>
 </p>
 <div class="zim-object">
-<pre><code class="js">In template:
+<pre>
+In template:
 &lt;input type='text' name='text' (input) = "formFilled($event)"&gt;
 
 In TS:
@@ -275,7 +282,7 @@ formFilled(event: any){
     console.log(event); 
     this.textEntered= (&lt;HTMLInputElement&gt;event.target).value;
   }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -307,8 +314,9 @@ For this, we import
 </div>
 </p>
 <div class="zim-object">
-<pre><code class="js">import { FormsModule } from '@angular/forms';
-</code></pre>
+<pre>
+import { FormsModule } from '@angular/forms';
+</pre>
 </div>
 
 <br>
@@ -319,11 +327,12 @@ in component ts as well as in appmodulets. Additionally, must add FormsModule to
 </div>
 </p>
 <div class="zim-object">
-<pre><code class="js">imports: [
+<pre>
+imports: [
     BrowserModule,
     FormsModule
   ]
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -334,7 +343,8 @@ Now,
 </div>
 </p>
 <div class="zim-object">
-<pre><code class="js">In TS:
+<pre>
+In TS:
 textEntered : any = '';
 
 In template:
@@ -343,7 +353,7 @@ In template:
 &lt;div&gt;
     {{ textEntered }}
 &lt;/div&gt;
-</code></pre>
+</pre>
 </div>
 
 <br>

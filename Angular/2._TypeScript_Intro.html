@@ -170,14 +170,15 @@ TypeScript is an extension of JavaScript.
 </p>
 
 <div class="zim-object">
-<pre><code class="js">function add(a,b) {
+<pre>
+function add(a,b) {
 	var c= a + b
 	return c;
 }
 
 console.log(add(1,2));
 console.log(add(1,'2'));
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -199,7 +200,8 @@ Issues:
 </p>
 
 <div class="zim-object">
-<pre><code class="js">function addTwoNumbers (num1: number, num2: number) : number {
+<pre>
+function addTwoNumbers (num1: number, num2: number) : number {
     let sum : number = num1 + num2;
     return sum;
 }
@@ -221,7 +223,7 @@ employee = {
 	employeeId: '123'
 }
 
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -230,7 +232,8 @@ employee = {
 <b>Generics and Other Power Features</b>
 </p>
 <div class="zim-object">
-<pre><code class="js">function insertAtBeginning(array: string[], value:string) {
+<pre>
+function insertAtBeginning(array: string[], value:string) {
 	const newArray = [value, ... array];
 	return newArray;
 }
@@ -239,7 +242,7 @@ const demoArray = [1,2,3];
 const updatedArray = insertAtBeginning(demoArray, -1);
 
 updatedArray[0].split(' ');
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -261,7 +264,8 @@ To deal with this, we have the concept of generics.
 </p>
 
 <div class="zim-object">
-<pre><code class="js">function insertAtBeginning&lt;T&gt;(array: T[], value:T) {
+<pre>
+function insertAtBeginning&lt;T&gt;(array: T[], value:T) {
 	const newArray = [value, ... array];
 	return newArray;
 }
@@ -271,7 +275,7 @@ const addedElement = -1;
 const updatedArray = insertAtBeginning(demoArray, addedElement);
 
 updatedArray[0].split('');
-</code></pre>
+</pre>
 </div>
 
 <br>

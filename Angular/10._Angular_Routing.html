@@ -187,8 +187,9 @@ With routing, you are able to retain the functionality and structure of an SPA, 
 In app.module.ts:
 </p>
 <div class="zim-object">
-<pre><code class="js">import { RouterModule, Routes } from '@angular/router';
-</code></pre>
+<pre>
+import { RouterModule, Routes } from '@angular/router';
+</pre>
 </div>
 
 <br>
@@ -197,7 +198,8 @@ In app.module.ts:
 Set up a list of routes within appmodule:
 </p>
 <div class="zim-object">
-<pre><code class="js">const appRoutes : Routes = [
+<pre>
+const appRoutes : Routes = [
   { path: '', component: HomeComponent },
   { path: 'test', component: TestComponent },
   { path: 'data', component: DataComponent },
@@ -211,7 +213,7 @@ imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -220,8 +222,9 @@ imports: [
 Now in your app-component, remove all references to other components and replace instead with:
 </p>
 <div class="zim-object">
-<pre><code class="html">&lt;router-outlet&gt;&lt;/router-outlet&gt;
-</code></pre>
+<pre>
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+</pre>
 </div>
 
 <br>
@@ -246,10 +249,11 @@ While this looks normal, it is suboptimal especially for very heavy apps.
 Instead of href, we must use angular's inbuilt routerLink feature:
 </p>
 <div class="zim-object">
-<pre><code class="html">&lt;a routerLink="/"&gt;Go Home&lt;/a&gt; &lt;br&gt;
+<pre>
+&lt;a routerLink="/"&gt;Go Home&lt;/a&gt; &lt;br&gt;
 &lt;a routerLink="/"&gt;View Data&lt;/a&gt; &lt;br&gt;
 &lt;a routerLink="/"&gt;Test Something&lt;/a&gt; &lt;br&gt;
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -266,7 +270,8 @@ You can also link to something using a method.
 In your component ts file,
 </p>
 <div class="zim-object">
-<pre><code class="js">import { Router } from '@angular/router';
+<pre>
+import { Router } from '@angular/router';
 
 constructor(... private router:Router,...){
 }
@@ -275,7 +280,7 @@ goToLink(){
 	this.router.navigateByUrl('test');
 }
 
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -284,8 +289,9 @@ goToLink(){
 In HTML
 </p>
 <div class="zim-object">
-<pre><code class="html">&lt;button (click)='goToLink()'&gt;Go to TestPage&lt;/button&gt;
-</code></pre>
+<pre>
+&lt;button (click)='goToLink()'&gt;Go to TestPage&lt;/button&gt;
+</pre>
 </div>
 
 <br>

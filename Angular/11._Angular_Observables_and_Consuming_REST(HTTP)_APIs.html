@@ -179,10 +179,11 @@ Instead, let us have a look at HTTP APIs
 in appmodulets:
 </p>
 <div class="zim-object">
-<pre><code class="js">import { HttpClientModule } from '@angular/common/http'
+<pre>
+import { HttpClientModule } from '@angular/common/http'
 
 //also add to imports array
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -192,10 +193,11 @@ inject the httpclient into the constructor as you have with services and router 
 </p>
 
 <div class="zim-object">
-<pre><code class="js">this.http.get('https://reqres.in/api/users/2').subscribe(data =&gt; {
+<pre>
+this.http.get('https://reqres.in/api/users/2').subscribe(data =&gt; {
 	console.log(data);
 })
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -205,10 +207,11 @@ POST requests are the same:
 </p>
 
 <div class="zim-object">
-<pre><code class="js">this.http.post('https://reqres.in/api/users/2', postData).subscribe(data =&gt; {
+<pre>
+this.http.post('https://reqres.in/api/users/2', postData).subscribe(data =&gt; {
 	console.log(data);
 })
-</code></pre>
+</pre>
 </div>
 
 

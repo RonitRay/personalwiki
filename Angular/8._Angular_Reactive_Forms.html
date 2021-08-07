@@ -190,8 +190,9 @@ Check that it has also been automatically imported at the top of this file or it
 In your component TS file, import this:
 </p>
 <div class="zim-object">
-<pre><code class="js">import { FormGroup } from '@angular/forms';
-</code></pre>
+<pre>
+import { FormGroup } from '@angular/forms';
+</pre>
 </div>
 
 <br>
@@ -207,7 +208,8 @@ Let us now create a form using Reactive Forms. The crux of this is that
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">export class FormComponent implements OnInit {
+<pre>
+export class FormComponent implements OnInit {
 
   loginForm: FormGroup;
 .
@@ -219,7 +221,7 @@ constructor() {
       'password' : new FormControl(null, Validators.required)
     });
   }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -229,7 +231,8 @@ We create a basic form using Angular Material:
 </p>
 
 <div class="zim-object">
-<pre><code class="html">&lt;section class='container'&gt;
+<pre>
+&lt;section class='container'&gt;
     &lt;div class='regForm'&gt;
         &lt;h3&gt;Login&lt;/h3&gt;
         &lt;form class="registration-form"&gt;
@@ -248,13 +251,14 @@ We create a basic form using Angular Material:
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/section&gt;
-</code></pre>
+</pre>
 </div>
 
 <br>
 
 <div class="zim-object">
-<pre><code class="css">section,
+<pre>
+section,
 .action {
     width: 100%;
     height: 100%;
@@ -263,7 +267,7 @@ We create a basic form using Angular Material:
     align-items: center;
     text-align: center;
 }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -280,7 +284,8 @@ Now we add the bits to the template to make it reactive.
 </p>
 
 <div class="zim-object">
-<pre><code class="html">&lt;section class='container'&gt;
+<pre>
+&lt;section class='container'&gt;
     &lt;div class='regForm'&gt;
         &lt;h3&gt;User Registration&lt;/h3&gt;
         &lt;form class="registration-form" [formGroup]="loginForm"&gt;
@@ -305,13 +310,14 @@ Now we add the bits to the template to make it reactive.
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/section&gt;
-</code></pre>
+</pre>
 </div>
 
 <br>
 
 <div class="zim-object">
-<pre><code class="js">import { Component, OnInit } from '@angular/core';
+<pre>
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -341,7 +347,7 @@ export class FormComponent implements OnInit {
     console.log(this.loginForm.value);
   }
 }
-</code></pre>
+</pre>
 </div>
 
 <br>

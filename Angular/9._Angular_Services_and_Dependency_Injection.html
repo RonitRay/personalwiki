@@ -179,8 +179,9 @@ Let's create an injectable service.
 </p>
 
 <div class="zim-object">
-<pre><code class="html">ng generate service &lt;service-name&gt;
-</code></pre>
+<pre>
+ng generate service &lt;service-name&gt;
+</pre>
 </div>
 
 <br>
@@ -198,7 +199,8 @@ Let's make a basic logging service now.
 </p>
 
 <div class="zim-object">
-<pre><code class="js">import { Injectable } from '@angular/core';
+<pre>
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -212,7 +214,7 @@ export class LoggingService {
 		+ (new Date()).toLocaleString());
   }
 }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -227,8 +229,9 @@ Now, to inject it in any existing component:
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">import { LoggingService } from '../logging.service';
-</code></pre>
+<pre>
+import { LoggingService } from '../logging.service';
+</pre>
 </div>
 
 <br>
@@ -239,12 +242,13 @@ Now, to inject it in any existing component:
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">constructor( private logger : LoggingService ) {
+<pre>
+constructor( private logger : LoggingService ) {
 .
 .
 .
 }
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -255,13 +259,14 @@ Now, to inject it in any existing component:
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">@Component({
+<pre>
+@Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
   providers: [ LoggingService ]
 })
-</code></pre>
+</pre>
 </div>
 
 <br>
@@ -272,10 +277,11 @@ Now, to inject it in any existing component:
 </ol>
 </p>
 <div class="zim-object">
-<pre><code class="js">onSubmit() : void {   
+<pre>
+onSubmit() : void {   
     this.logger.logToConsole(this.loginForm.value);
   }
-</code></pre>
+</pre>
 </div>
 
 <br>

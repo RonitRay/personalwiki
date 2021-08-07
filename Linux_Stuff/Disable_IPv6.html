@@ -148,8 +148,9 @@ Created Wednesday 14 July 2021
 </p>
 
 <div class="zim-object">
-<pre><code class="js">sudo vi /etc/sysctl.conf
-</code></pre>
+<pre>
+sudo vi /etc/sysctl.conf
+</pre>
 </div>
 
 <br>
@@ -159,18 +160,20 @@ Add at the bottom:
 </p>
 
 <div class="zim-object">
-<pre><code class="js">net.ipv6.conf.all.disable_ipv6 = 1
+<pre>
+net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 net.ipv6.conf.lo.disable_ipv6 = 1
 net.ipv6.conf.tun0.disable_ipv6 = 1
-</code></pre>
+</pre>
 </div>
 
 <br>
 
 <div class="zim-object">
-<pre><code class="js">sudo sysctl -p
-</code></pre>
+<pre>
+sudo sysctl -p
+</pre>
 </div>
 
 <p>
@@ -182,8 +185,9 @@ check status with:
 </p>
 
 <div class="zim-object">
-<pre><code class="js">sudo cat /proc/sys/net/ipv6/conf/all/disable_ipv6
-</code></pre>
+<pre>
+sudo cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+</pre>
 </div>
 
 <p>
